@@ -1,0 +1,51 @@
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    <h2>Users List</h2>
+  </div>
+  <div class="table-responsive">
+    <table class="table mb-0">
+      <thead class="thead-dark">
+        <tr>
+          <th>Username</th>
+          <th>Email</th>
+          <th>Role</th>
+          <th>locked</th>
+          <th>enabled</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let user of users | async">
+          <td>{{ user.username }}</td>
+          <td>{{ user.email }}</td>
+          <td>{{ user.role }}</td>
+          <td>{{ user.locked }}</td>
+          <td>{{ user.enabled }}</td>
+
+          <td>
+            <button
+              (click)="deleteUser(user.id)"
+              class="btn btn-outline-danger btn-rounded waves-effect waves-light"
+            >
+              Delete
+            </button>
+            <button
+              (click)="updateUser(user.id)"
+              class="btn btn-outline-secondary btn-rounded waves-effect waves-light"
+              style="margin-left: 10px"
+            >
+              Update
+            </button>
+            <button
+              (click)="userDetails(user.id)"
+              class="btn btn-outline-success btn-rounded waves-effect waves-light"
+              style="margin-left: 10px"
+            >
+              Details
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

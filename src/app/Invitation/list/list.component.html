@@ -1,0 +1,140 @@
+<main class="main">
+  <div
+    class="site-breadcrumb"
+    style="background: url(../../../assets/img1/bg/breadcrumb.jpg)"
+  >
+    <div class="container">
+      <h2 class="breadcrumb-title">Invitations</h2>
+      <ul class="breadcrumb-menu">
+        <li><a href="index-2.html">Home</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="container">
+    <form #f="ngForm" method="post">
+      <div class="row col-md-6 col-md-offset-2 custyle">
+        <div class="row">
+          <div class="col-12">
+            <div class="card-body">
+              <h1 class="card-title">Invitations</h1>
+
+              <div
+                id="state-saving-datatable_wrapper"
+                class="dataTables_wrapper dt-bootstrap4 no-footer"
+              >
+                <div class="row">
+                  <div class="row">
+                    <div class="col-sm-12">
+                      <table
+                        id="state-saving-datatable"
+                        class="table activate-select dt-responsive nowrap dataTable no-footer dtr-inline collapsed"
+                        role="grid"
+                        aria-describedby="state-saving-datatable_info"
+                        style="width: 1193px"
+                      >
+                        <thead>
+                          <tr role="row">
+                            <th
+                              class="sorting"
+                              tabindex="0"
+                              aria-controls="state-saving-datatable"
+                              rowspan="1"
+                              colspan="1"
+                              style="width: 70px"
+                              aria-label="Position: activate to sort column ascending"
+                            >
+                              For
+                            </th>
+                            <th
+                              class="sorting"
+                              tabindex="0"
+                              aria-controls="state-saving-datatable"
+                              rowspan="1"
+                              colspan="1"
+                              style="width: 90px"
+                              aria-label="Office: activate to sort column ascending"
+                            >
+                              Subject
+                            </th>
+                            <th
+                              class="sorting"
+                              tabindex="0"
+                              aria-controls="state-saving-datatable"
+                              rowspan="1"
+                              colspan="1"
+                              style="width: 70px"
+                              aria-label="Age: activate to sort column ascending"
+                            >
+                              Message
+                            </th>
+                            <th
+                              class="sorting"
+                              tabindex="0"
+                              aria-controls="state-saving-datatable"
+                              rowspan="1"
+                              colspan="1"
+                              style="width: 70px"
+                              aria-label="Age: activate to sort column ascending"
+                            >
+                              Status
+                            </th>
+                            <th
+                              class="sorting"
+                              tabindex="0"
+                              aria-controls="state-saving-datatable"
+                              rowspan="1"
+                              colspan="1"
+                              style="width: 70px"
+                              aria-label="Start date: activate to sort column ascending"
+                            >
+                              Image
+                            </th>
+                          </tr>
+                        </thead>
+
+                        <tbody>
+                          <tr *ngFor="let invitation of invitations">
+                            <td>{{ invitation.pour }}</td>
+                            <td>{{ invitation.sujet }}</td>
+                            <td>{{ invitation.message }}</td>
+                            <td>{{ invitation.status }}</td>
+
+                            <td>
+                              <img
+                                class=""
+                                src="{{ path + invitation.imageName }}"
+                                alt="Header Language"
+                                width="200"
+                                height="121"
+                              />
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- end card body-->
+            </div>
+            <!-- end col-->
+          </div>
+
+          <td>
+            <button
+              type="submit"
+              (click)="save()"
+              class="btn btn-success waves-effect waves-light"
+              id="page-header-user-dropdown"
+              data-toggle="dropdown"
+              aria-haspopup="true"
+              aria-expanded="false"
+            >
+              Send New Invitation
+            </button>
+          </td>
+        </div>
+      </div>
+    </form>
+  </div>
+</main>
